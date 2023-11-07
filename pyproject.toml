@@ -6,7 +6,7 @@ authors = ["Luke Clark Andrada <lcmandrada@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-mkdocs-material = "^8.5.10"
+mkdocs-material = "9.2.0b3"
 
 [tool.poetry.dev-dependencies]
 

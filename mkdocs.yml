@@ -1,3 +1,17 @@
-site_name: My Docs
+site_name: Luke Clark
 theme:
   name: material
+  palette:
+    scheme: slate
+  logo: images/logo.png
+  favicon: images/favicon.png
+  features:
+    - navigation.tabs
+nav:
+  - Home:
+    - index.md
+  - Blog:
+    - blog/index.md
+plugins:
+  - blog
+  - search
