@@ -8,10 +8,24 @@ theme:
   features:
     - navigation.tabs
 nav:
-  - Home:
-    - index.md
+  - Python:
+    - core.md
+    - library.md
+    - snippets.md
+    - requests.md
+    - flask.md
+    - celery.md
+    - click.md
   - Blog:
     - blog/index.md
 plugins:
   - blog
   - search
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
