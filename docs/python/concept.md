@@ -1,4 +1,4 @@
-# Core
+# Concept
 
 ## Data Types
 ```py
@@ -525,5 +525,5 @@ var2 = deepcopy(var1)
 
 ## References
 
-### [PEP 8](https://peps.python.org/pep-0008/)
-### [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+[PEP 8](https://peps.python.org/pep-0008/)  
+[Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)

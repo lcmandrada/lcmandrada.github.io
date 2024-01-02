@@ -1,21 +1,27 @@
-site_name: Luke Clark
+site_name: Luke
 theme:
   name: material
   palette:
     scheme: slate
+    primary: custom
+    accent: custom
   logo: images/logo.png
   favicon: images/favicon.png
   features:
     - navigation.tabs
+  font:
+    code: Source Code Pro
 nav:
   - Python:
-    - core.md
-    - library.md
-    - snippets.md
-    - requests.md
-    - flask.md
-    - celery.md
-    - click.md
+    - python/concept.md
+    - python/library.md
+    - python/snippets.md
+    - python/requests.md
+    - python/flask.md
+    - python/celery.md
+    - python/click.md
+  - Notes:
+    - notes/mongodb.md
   - Blog:
     - blog/index.md
 plugins:
@@ -29,3 +35,5 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+extra_css:
+  - stylesheets/extra.css
