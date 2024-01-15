@@ -25,6 +25,8 @@
 {"email": {"$regex": "@mailinator.com", "$options": "i"}}
 ```
 
+
+
 ## Index
 
 ### Single
@@ -52,6 +54,8 @@ db.billing_lines.createIndex(
 )
 ```
 
+
+
 ## Update
 
 ### Many
@@ -64,6 +68,8 @@ db.employees.updateMany(
     {"$set": {"previous_employee_status": "ACTIVE"}}
 )
 ```
+
+
 
 ## Aggregate
 
@@ -126,6 +132,8 @@ db.disbursement_transactions.aggregate([
 ])
 ```
 
+
+
 ## Tools
 
 ### Dump and restore
@@ -147,6 +155,8 @@ mongodump --archive --db=recovery | mongorestore --archive  --nsFrom='recovery.*
 db.payslip_fields.renameCollection("payslip_fieldsx")
 ```
 
+
+
 ## Convert
 ```js
 // date to date string
@@ -155,6 +165,8 @@ db.files.updateMany(
     [{$set: {actual_remittance_date: {$dateToString: {format: "%Y-%m-%d", date: "$created_at"}}}}]
 )
 ```
+
+
 
 ## Profiling
 ```js
@@ -168,6 +180,23 @@ db.getProfilingStatus()
 use admin
 db.serverStatus().connections
 ```
+
+## Replica Set
+```bash
+vi /usr/local/etc/mongod.conf
+replication:
+replSetName: rs0
+
+mongosh
+rs.initiate({_id: "rs0", members: [{_id: 0, host: "127.0.0.1:27017"}] })
+
+env
+MONGODB_URL=mongodb://localhost:27017/deductions_uat?replicaSet=rs0
+```
+
+[Reference](https://gist.github.com/davisford/bb37079900888c44d2bbcb2c52a5d6e8)
+
+
 
 ## References
 

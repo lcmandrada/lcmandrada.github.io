@@ -21,7 +21,12 @@ nav:
     - python/celery.md
     - python/click.md
   - Notes:
+    - notes/commands.md
     - notes/mongodb.md
+    - notes/python.md
+    - notes/sql.md
+    - notes/java.md
+    - notes/tools.md
   - Blog:
     - blog/index.md
 plugins:
