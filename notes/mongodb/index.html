@@ -1,0 +1,1624 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tools/">
+      
+      
+        <link rel="next" href="../programming/">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>MongoDB - Luke</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mongodb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Luke" class="md-header__button md-logo" aria-label="Luke" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Luke
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MongoDB
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../python/concept/" class="md-tabs__link">
+          
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../commands/" class="md-tabs__link">
+          
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Luke" class="md-nav__button md-logo" aria-label="Luke" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Luke
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/concept/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concept
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/library/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/snippets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snippets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/requests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/celery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Celery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/click/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Click
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodejs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NodeJS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MongoDB
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    MongoDB
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex" class="md-nav__link">
+    <span class="md-ellipsis">
+      RegEx
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compound
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#many" class="md-nav__link">
+    <span class="md-ellipsis">
+      Many
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aggregate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dump-and-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dump and restore
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rename" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rename
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profiling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-connection-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check connection status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replica-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replica Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Problems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Array size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex" class="md-nav__link">
+    <span class="md-ellipsis">
+      RegEx
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compound
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#many" class="md-nav__link">
+    <span class="md-ellipsis">
+      Many
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aggregate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dump-and-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dump and restore
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rename" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rename
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profiling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-connection-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check connection status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replica-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replica Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="mongodb">MongoDB</h1>
+<h2 id="commands">Commands</h2>
+<p>MongoDB Shell<br />
+Also a JS shell - can execute JS code</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">help</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">db</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">show</span><span class="w"> </span><span class="nx">dbs</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">show</span><span class="w"> </span><span class="nx">collections</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">// create/switch to specified db</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nx">use</span><span class="w"> </span><span class="p">[</span><span class="nx">db</span><span class="p">]</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">// insert many documents</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nx">db</span><span class="p">.[</span><span class="nx">collection</span><span class="p">].</span><span class="nx">insert</span><span class="p">([{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}])</span><span class="w"> </span><span class="c1">// array of js objects</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">// returns all documents; returns a cursor</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nx">db</span><span class="p">.[</span><span class="nx">collection</span><span class="p">].</span><span class="nx">find</span><span class="p">()</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1">// specific query; returns a cursor</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nx">db</span><span class="p">.[</span><span class="nx">collection</span><span class="p">].</span><span class="nx">find</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1">// specific query; returns 0 or 1 document</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nx">db</span><span class="p">.[</span><span class="nx">collection</span><span class="p">].</span><span class="nx">findOne</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1">// updates 0 or 1 document</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="nx">db</span><span class="p">.[</span><span class="nx">collection</span><span class="p">].</span><span class="nx">updateOne</span><span class="p">({</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">query</span><span class="o">&gt;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">operator</span><span class="o">&gt;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">updates</span><span class="o">&gt;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1">// updates many documents</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nx">db</span><span class="p">.[</span><span class="nx">collection</span><span class="p">].</span><span class="nx">updateMany</span><span class="p">({</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">query</span><span class="o">&gt;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">operator</span><span class="o">&gt;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">updates</span><span class="o">&gt;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1">// completely replace a document except the id</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="nx">db</span><span class="p">.[</span><span class="nx">collection</span><span class="p">].</span><span class="nx">replaceOne</span><span class="p">({</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">query</span><span class="o">&gt;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">operator</span><span class="o">&gt;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">updates</span><span class="o">&gt;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="c1">// deletes 0 or 1 document</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="nx">db</span><span class="p">.[</span><span class="nx">collection</span><span class="p">].</span><span class="nx">deleteOne</span><span class="p">({</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">query</span><span class="o">&gt;</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="c1">// deletes many documents</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="nx">db</span><span class="p">.[</span><span class="nx">collection</span><span class="p">].</span><span class="nx">deleteMany</span><span class="p">({</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">query</span><span class="o">&gt;</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="c1">// sample query operators</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="p">{</span><span class="s1">&#39;nested.properties&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">value</span><span class="p">}</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">{</span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">$gt</span><span class="o">:</span><span class="w"> </span><span class="mf">7</span><span class="p">}}</span>
+</span></code></pre></div>
+<h2 id="query">Query</h2>
+<h3 id="array-size">Array size</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="s2">&quot;$expr&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$gt&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">&quot;$size&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$product_details&quot;</span><span class="p">},</span><span class="w"> </span><span class="mf">1</span><span class="p">]}}</span>
+</span></code></pre></div>
+<h3 id="type">Type</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// string</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span><span class="s2">&quot;created_at&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">}}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">// not string</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">{</span><span class="s2">&quot;created_at&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$not&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">}}}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">// array elements are also array</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">{</span><span class="s2">&quot;active_product&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$elemMatch&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">}}}</span>
+</span></code></pre></div>
+<h3 id="regex">RegEx</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="s2">&quot;email&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$regex&quot;</span><span class="o">:</span><span class="w"> </span><span class="sr">/@mailinator.com/i</span><span class="p">}}</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span><span class="s2">&quot;email&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$regex&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;@mailinator.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$options&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;i&quot;</span><span class="p">}}</span>
+</span></code></pre></div>
+<h2 id="index">Index</h2>
+<h3 id="single">Single</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">db</span><span class="p">.</span><span class="nx">prepayment</span><span class="p">.</span><span class="nx">createIndex</span><span class="p">(</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;transaction_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;transaction_id_unique_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;unique&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nx">db</span><span class="p">.</span><span class="nx">flows</span><span class="p">.</span><span class="nx">createIndexes</span><span class="p">(</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">[{</span><span class="s2">&quot;created_at&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;flow_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;recovery_type_code&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">}]</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="compound">Compound</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">db</span><span class="p">.</span><span class="nx">billing_lines</span><span class="p">.</span><span class="nx">createIndex</span><span class="p">(</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="s2">&quot;product_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="s2">&quot;current_cycle_payout_date&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="s2">&quot;line_type&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="s2">&quot;status&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;product_id_payroll_date_1&quot;</span><span class="p">}</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="update">Update</h2>
+<h3 id="many">Many</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">db</span><span class="p">.</span><span class="nx">employees</span><span class="p">.</span><span class="nx">updateMany</span><span class="p">(</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="s2">&quot;employee_status&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;GRANDFATHERED&quot;</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="s2">&quot;previous_employee_status&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;GRANDFATHERED&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;$set&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;previous_employee_status&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">}}</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="aggregate">Aggregate</h2>
+<h3 id="expression">Expression</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">db</span><span class="p">.</span><span class="nx">employees</span><span class="p">.</span><span class="nx">aggregate</span><span class="p">(</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="p">[</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">            </span><span class="s2">&quot;$match&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">                </span><span class="s2">&quot;$expr&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">                    </span><span class="s2">&quot;$eq&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">                        </span><span class="s2">&quot;$employee_status&quot;</span><span class="p">,</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">                        </span><span class="s2">&quot;$previous_employee_status&quot;</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">                    </span><span class="p">]</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">            </span><span class="s2">&quot;$project&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">                </span><span class="s2">&quot;employee_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">                </span><span class="s2">&quot;employee_status&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">                </span><span class="s2">&quot;previous_employee_status&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="count">Count</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">db</span><span class="p">.</span><span class="nx">employees</span><span class="p">.</span><span class="nx">aggregate</span><span class="p">(</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="p">[</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">            </span><span class="s2">&quot;$match&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">                </span><span class="s2">&quot;employee_status&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;GRANDFATHERED&quot;</span><span class="p">,</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">                </span><span class="s2">&quot;previous_employee_status&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;GRANDFATHERED&quot;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="p">{</span><span class="s2">&quot;$count&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;count&quot;</span><span class="p">}</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="group">Group</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// group, count, sort count in descending, and show first (highest count)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nx">db</span><span class="p">.</span><span class="nx">lines</span><span class="p">.</span><span class="nx">aggregate</span><span class="p">([</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;$match&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$ne&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;CANCELLED&quot;</span><span class="p">}}},</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;$group&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;product_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$product_id&quot;</span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$sum&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">}}},</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;$sort&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">}},</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;$limit&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">}</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">])</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1">// group, count, filter counts greater than 1, and count filtered</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1">// used for counting duplicates</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nx">db</span><span class="p">.</span><span class="nx">disbursement_transactions</span><span class="p">.</span><span class="nx">aggregate</span><span class="p">([</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;$group&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;disbursement_id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$disbursement_id&quot;</span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$sum&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">}}},</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;$match&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;count&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;$gt&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">}}},</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="p">{</span><span class="s2">&quot;$count&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;duplicates&quot;</span><span class="p">}</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">])</span>
+</span></code></pre></div>
+<h2 id="tools">Tools</h2>
+<h3 id="dump-and-restore">Dump and restore</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">mongodump</span><span class="w"> </span><span class="o">--</span><span class="nx">uri</span><span class="o">=</span><span class="s2">&quot;mongodb://localhost:27017&quot;</span><span class="w"> </span><span class="o">--</span><span class="nx">db</span><span class="o">=</span><span class="nx">recovery</span><span class="w"> </span><span class="o">-</span><span class="nx">o</span><span class="w"> </span><span class="nx">recovery_service</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nx">mongorestore</span><span class="w"> </span><span class="o">--</span><span class="nx">nsFrom</span><span class="o">=</span><span class="s1">&#39;recovery.*&#39;</span><span class="w"> </span><span class="o">--</span><span class="nx">nsTo</span><span class="o">=</span><span class="s1">&#39;recoveryx.*&#39;</span><span class="w"> </span><span class="nx">recovery_service</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">// specific collection</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nx">mongodump</span><span class="w"> </span><span class="o">--</span><span class="nx">uri</span><span class="w"> </span><span class="s2">&quot;mongodb://localhost:27017&quot;</span><span class="w"> </span><span class="o">--</span><span class="nx">db</span><span class="w"> </span><span class="nx">user_profile</span><span class="w"> </span><span class="o">--</span><span class="nx">collection</span><span class="w"> </span><span class="nx">user_event</span><span class="w"> </span><span class="o">--</span><span class="nx">out</span><span class="w"> </span><span class="s2">&quot;./loan_eligibility&quot;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nx">mongorestore</span><span class="w"> </span><span class="o">--</span><span class="nx">uri</span><span class="w"> </span><span class="s2">&quot;mongodb://localhost:27018&quot;</span><span class="w"> </span><span class="o">--</span><span class="nx">db</span><span class="w"> </span><span class="nx">profile</span><span class="w"> </span><span class="o">--</span><span class="nx">collection</span><span class="w"> </span><span class="nx">user_event</span><span class="w"> </span><span class="s2">&quot;./loan_eligibility/user_profile/user_event.bson&quot;</span>
+</span></code></pre></div>
+<h2 id="rename">Rename</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// database</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">mongodump</span><span class="w"> </span><span class="o">--</span><span class="nx">archive</span><span class="w"> </span><span class="o">--</span><span class="nx">db</span><span class="o">=</span><span class="nx">recovery</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">mongorestore</span><span class="w"> </span><span class="o">--</span><span class="nx">archive</span><span class="w">  </span><span class="o">--</span><span class="nx">nsFrom</span><span class="o">=</span><span class="s1">&#39;recovery.*&#39;</span><span class="w"> </span><span class="o">--</span><span class="nx">nsTo</span><span class="o">=</span><span class="s1">&#39;recoveryx.*&#39;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1">// collection</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nx">db</span><span class="p">.</span><span class="nx">payslip_fields</span><span class="p">.</span><span class="nx">renameCollection</span><span class="p">(</span><span class="s2">&quot;payslip_fieldsx&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="convert">Convert</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// date to date string</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">db</span><span class="p">.</span><span class="nx">files</span><span class="p">.</span><span class="nx">updateMany</span><span class="p">(</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="p">{</span><span class="nx">actual_remittance_date</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">[{</span><span class="nx">$set</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">actual_remittance_date</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">$dateToString</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;%Y-%m-%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$created_at&quot;</span><span class="p">}}}}]</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="profiling">Profiling</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">use</span><span class="w"> </span><span class="nx">company</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nx">db</span><span class="p">.</span><span class="nx">setProfilingLevel</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nx">db</span><span class="p">.</span><span class="nx">getProfilingStatus</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="check-connection-status">Check connection status</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nx">use</span><span class="w"> </span><span class="nx">admin</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nx">db</span><span class="p">.</span><span class="nx">serverStatus</span><span class="p">().</span><span class="nx">connections</span>
+</span></code></pre></div>
+<h2 id="replica-set">Replica Set</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>vi<span class="w"> </span>/usr/local/etc/mongod.conf
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>replication:
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>replSetName:<span class="w"> </span>rs0
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>mongosh
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>rs.initiate<span class="o">({</span>_id:<span class="w"> </span><span class="s2">&quot;rs0&quot;</span>,<span class="w"> </span>members:<span class="w"> </span><span class="o">[{</span>_id:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>host:<span class="w"> </span><span class="s2">&quot;127.0.0.1:27017&quot;</span><span class="o">}]</span><span class="w"> </span><span class="o">})</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>env
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="nv">MONGODB_URL</span><span class="o">=</span>mongodb://localhost:27017/deductions_uat?replicaSet<span class="o">=</span>rs0
+</span></code></pre></div>
+<p><a href="https://gist.github.com/davisford/bb37079900888c44d2bbcb2c52a5d6e8">Reference</a></p>
+<h2 id="references">References</h2>
+<p><a href="https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-mongodb">Setup</a><br />
+<a href="https://www.mongodb.com/try/download/compass">Compass</a><br />
+<a href="https://www.codexpedia.com/devops/installing-multiple-instances-of-mongodb/">Install multiple MongoDB instances</a>  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>

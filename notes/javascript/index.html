@@ -1,0 +1,3304 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../css/">
+      
+      
+        <link rel="next" href="../nodejs/">
+      
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>Javascript - Luke</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#javascript" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Luke" class="md-header__button md-logo" aria-label="Luke" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Luke
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Javascript
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../python/concept/" class="md-tabs__link">
+          
+  
+  Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../commands/" class="md-tabs__link">
+          
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Luke" class="md-nav__button md-logo" aria-label="Luke" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Luke
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/concept/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concept
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/library/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/snippets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snippets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/requests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/celery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Celery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/click/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Click
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Javascript
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Javascript
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primitive Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operators
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Math
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spread
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spread">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      As spread
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      As rest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-template-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Template Literals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-with-properties-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object with properties and methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      If
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch Case
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Operators
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falsy-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Falsy Values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forof-iterable" class="md-nav__link">
+    <span class="md-ellipsis">
+      for...of (iterable)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forin-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      for...in (object)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dowhile" class="md-nav__link">
+    <span class="md-ellipsis">
+      do...while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break" class="md-nav__link">
+    <span class="md-ellipsis">
+      Break
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scopes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Expression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrow Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrow Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implict-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implict Return
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#higher-order-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Higher Order Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destructuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Destructuring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#element-properties-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Element Properties and Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Element Properties and Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-remove-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create and remove elements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Handler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Handler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inline-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inline (avoid)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Listener
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Promise
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Promise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-promise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a promise
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#async-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Async Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax" class="md-nav__link">
+    <span class="md-ellipsis">
+      AJAX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xhr-old" class="md-nav__link">
+    <span class="md-ellipsis">
+      XHR (old)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-api-built-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch API (built-in)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Axios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factory-function-old" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factory Function (old)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructor-function-old" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructor Function (old)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes {#classes}
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camelcase-naming-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      CamelCase Naming Convention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-is-the-top-level-or-global-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      window is the top level or global object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-is-single-threaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      JS is single-threaded
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callback-hell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callback Hell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-is-a-prototype-based-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      JS is a prototype-based language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      this Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="this Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrow Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-an-object-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      As an object method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-a-dom-event-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      As a DOM event handler
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodejs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NodeJS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mongodb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MongoDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Problems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primitive Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operators
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Math
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spread
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spread">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      As spread
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      As rest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-template-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Template Literals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-with-properties-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object with properties and methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      If
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch Case
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Operators
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falsy-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Falsy Values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forof-iterable" class="md-nav__link">
+    <span class="md-ellipsis">
+      for...of (iterable)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forin-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      for...in (object)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dowhile" class="md-nav__link">
+    <span class="md-ellipsis">
+      do...while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break" class="md-nav__link">
+    <span class="md-ellipsis">
+      Break
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Continue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scopes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Expression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrow Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrow Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implict-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implict Return
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#higher-order-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Higher Order Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destructuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Destructuring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#element-properties-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Element Properties and Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Element Properties and Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-remove-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create and remove elements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Handler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Handler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inline-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inline (avoid)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Listener
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Promise
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Promise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-promise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a promise
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#async-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Async Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajax" class="md-nav__link">
+    <span class="md-ellipsis">
+      AJAX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xhr-old" class="md-nav__link">
+    <span class="md-ellipsis">
+      XHR (old)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-api-built-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetch API (built-in)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Axios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factory-function-old" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factory Function (old)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructor-function-old" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructor Function (old)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes {#classes}
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camelcase-naming-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      CamelCase Naming Convention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-is-the-top-level-or-global-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      window is the top level or global object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-is-single-threaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      JS is single-threaded
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callback-hell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callback Hell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-is-a-prototype-based-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      JS is a prototype-based language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#this-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      this Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="this Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrow-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrow Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-an-object-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      As an object method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-a-dom-event-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      As a DOM event handler
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="javascript">Javascript</h1>
+<h2 id="variables">Variables</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// comment</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">constant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">// old and not used anymore</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kd">var</span><span class="w"> </span><span class="nx">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="primitive-types">Primitive Types</h2>
+<ol>
+<li>Number - includes <code>NaN</code></li>
+<li>String - zeroth index<ul>
+<li><code>[]</code> to access index</li>
+<li><code>+</code> for concatenation</li>
+</ul>
+</li>
+<li>Boolean - <code>true</code> or <code>false</code></li>
+<li><code>null</code> - use intentionally</li>
+<li><code>undefined</code> - "I don't know the data."</li>
+</ol>
+<h2 id="operators">Operators</h2>
+<h3 id="math">Math</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>+           addition
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-           subtraction
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>/           division
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>*           multiplication
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>%           modulo
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>**          exponentiation
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>++          increment
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>-          decrement
+</span></code></pre></div>
+<h3 id="comparison">Comparison</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="o">&lt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="o">&gt;=</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="o">&lt;=</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="o">==</span><span class="w"> </span><span class="c1">// doesn&#39;t care about types</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="o">!=</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="o">===</span><span class="w"> </span><span class="c1">// strict; cares about types</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="o">!==</span>
+</span></code></pre></div>
+<h3 id="spread">Spread</h3>
+<h4 id="as-spread">As spread</h4>
+<p>Spreads an iterable as individual items:</p>
+<ul>
+<li>array to a function args</li>
+<li>array to a new array</li>
+<li>array to an object; index is used as key and item as value</li>
+</ul>
+<p>Spreads an object as individual keys and values:</p>
+<ul>
+<li>object to a new object</li>
+<li>order matters for several spreads, latter wins for conflicting keys</li>
+</ul>
+<h4 id="as-rest">As rest</h4>
+<p>Collects <em>other</em> arguments passed to a function
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">func</span><span class="p">(</span><span class="nx">argN</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h2 id="string-template-literals">String Template Literals</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="sb">`hi </span><span class="si">${</span><span class="nx">variable</span><span class="si">}</span><span class="sb">`</span>
+</span></code></pre></div>
+<h2 id="common-methods">Common Methods</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// browser</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(...)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">alert</span><span class="p">(...)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nx">alert</span><span class="p">(...)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nx">prompt</span><span class="p">()</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nb">parseInt</span><span class="p">(...)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">// async timeout</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span><span class="w"> </span><span class="nx">milliseconds</span><span class="p">)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1">// repeat callback for every interval</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span><span class="w"> </span><span class="nx">milliseconds</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1">// stops interval callback</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="html-script">HTML Script</h2>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    ...
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;script.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cp">&lt;!- or -&gt;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;...&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="data-structure">Data Structure</h2>
+<h3 id="arrays">Arrays</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">value1</span><span class="p">,</span><span class="w"> </span><span class="nx">valueN</span><span class="p">];</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">array</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>Methods</strong><br />
+Array methods can be chained.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// applies callback to each element</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">// no returns</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// ex: build on top of an existing variable, e.g. total, list</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1">// similar to forEach but returns a new array</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">newArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1">// returns a new array that &#39;passes&#39; the callback</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1">// callback must return a boolean</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">newArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1">// test; returns true if ALL items `pass` the callback</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="c1">// callback must return a boolean</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="c1">// test; returns true if ANY of the items passes the callback</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="c1">// callback must return a boolean</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="c1">// reduces an array to a single value by succeedingly pairing adjacent items and performing the callback&#39;s expression</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="c1">// callback returns a new value for the accumulator</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="kd">const</span><span class="w"> </span><span class="nx">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">accumulator</span><span class="p">,</span><span class="w"> </span><span class="nx">current</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">expression</span><span class="p">,</span><span class="w"> </span><span class="nx">initialValue</span><span class="p">)</span><span class="w"> </span>
+</span></code></pre></div>
+<h3 id="objects">Objects</h3>
+<p>All keys are automatically converted to strings.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">objectLiteral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="nx">value</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nx">keyN</span><span class="o">:</span><span class="w"> </span><span class="nx">valueN</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">};</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nx">objectLiteral</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span><span class="w"> </span><span class="c1">// allows expression inside the brackets</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nx">objectLiteral</span><span class="p">.</span><span class="nx">key</span>
+</span></code></pre></div>
+<h3 id="object-with-properties-and-methods">Object with properties and methods</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nx">property1</span><span class="o">:</span><span class="w"> </span><span class="nx">value1</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nx">method1</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1">// or</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="nx">property1</span><span class="o">:</span><span class="w"> </span><span class="nx">value1</span><span class="o">:</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="nx">method1</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>this</code> refers to the object that invoked the method, not necessarily the object where the method was <em>initialized</em> to.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nx">PI</span><span class="o">:</span><span class="w"> </span><span class="mf">3.14</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nx">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">PI</span><span class="p">)</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">}</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">other</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">test</span><span class="p">.</span><span class="nx">print</span><span class="p">;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1">// `this` here will refer to `window` and not to `test`</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1">// thus test.PI will not be displayed</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1">// other() is similar to window.other()</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="nx">other</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="control-flow">Control Flow</h2>
+<h3 id="if">If</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="switch-case">Switch Case</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">valueN</span><span class="o">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="k">default</span><span class="o">:</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="logical-operators">Logical Operators</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">&amp;&amp;</span><span class="w"> </span><span class="c1">// and</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="o">||</span><span class="w"> </span><span class="c1">// or</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="o">!</span><span class="w"> </span><span class="c1">// not</span>
+</span></code></pre></div>
+<h3 id="falsy-values">Falsy Values</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kc">false</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="mf">0</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="s1">&#39;&#39;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="kc">null</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="kc">undefined</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="kc">NaN</span>
+</span></code></pre></div>
+<h2 id="loops">Loops</h2>
+<h3 id="for">for</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">start</span><span class="p">;</span><span class="w"> </span><span class="nx">end</span><span class="p">;</span><span class="w"> </span><span class="nx">step</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="forof-iterable">for...of (iterable)</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">iterables</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="forin-object">for...in (object)</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="while">while</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="dowhile">do...while</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="p">(</span><span class="nx">condition</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="label">Label</h3>
+<p>Identifier that lets you refer to it elsewhere in your program.
+<div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nx">label</span><span class="o">:</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="p">...</span>
+</span></code></pre></div></p>
+<h3 id="break">Break</h3>
+<p>Terminates a loop
+<div class="language-js highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">break</span><span class="w"> </span><span class="nx">label</span><span class="p">;</span>
+</span></code></pre></div></p>
+<h3 id="continue">Continue</h3>
+<p>Skips or restarts an iteration
+<div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">continue</span><span class="p">;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="k">continue</span><span class="w"> </span><span class="nx">label</span><span class="p">;</span>
+</span></code></pre></div></p>
+<h2 id="function">Function</h2>
+<h3 id="format">Format</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">label</span><span class="p">(</span><span class="nx">argN</span><span class="p">,</span><span class="w"> </span><span class="nx">kwargN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="scopes">Scopes</h3>
+<ol>
+<li><strong>Function Scope</strong> - prioritizes initialized variable inside the function.</li>
+<li><strong>Block Scope</strong> - scope within blocks of code (e.g. conditionals, loops. <code>var</code> bypasses this as it forces function scope)</li>
+<li><strong>Lexical Scope</strong> - inner functions have access to variables in parent functions.</li>
+</ol>
+<h3 id="function-expression">Function Expression</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">argN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="arrow-function">Arrow Function</h3>
+<p>Similar to function expressions<br />
+Compact function definition</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">argN</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="p">};</span>
+</span></code></pre></div>
+<p><code>this</code> refers to where it was executed, instead of what invoked it.<br />
+Use regular function and arrow function appropriately. See <a href="#this-context">this Context</a></p>
+<h4 id="implict-return">Implict Return</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">argN</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="nx">value</span><span class="o">/</span><span class="nx">expression</span><span class="p">;</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="p">)</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="c1">// or</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">argN</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">value</span><span class="o">/</span><span class="nx">expression</span>
+</span></code></pre></div>
+<h3 id="higher-order-functions">Higher Order Functions</h3>
+<p>Functions that can accept and/or return functions</p>
+<h2 id="error-handling">Error Handling</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="destructuring">Destructuring</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1">// arrays</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">var1</span><span class="p">,</span><span class="w"> </span><span class="nx">var2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">varN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">;</span><span class="w"> </span><span class="c1">// ... in varN is a rest operator</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="c1">// objects</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">key1</span><span class="p">,</span><span class="w"> </span><span class="nx">key2</span><span class="p">,</span><span class="w"> </span><span class="nx">key3</span><span class="o">:</span><span class="w"> </span><span class="nx">newKey3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defaultVal</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">object</span><span class="p">;</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c1">// argumets</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="c1">// only the specified keys from an object argument will be accepted as input to the function</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="kd">function</span><span class="w"> </span><span class="nx">func</span><span class="p">({</span><span class="w"> </span><span class="nx">key1</span><span class="p">,</span><span class="w"> </span><span class="nx">key2</span><span class="p">,</span><span class="w"> </span><span class="nx">key3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defaultVal3</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="dom">DOM</h2>
+<p>Document Object Model<br />
+JS representation of a webpage</p>
+<h3 id="methods">Methods</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;tag&#39;</span><span class="p">)</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">)</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#id&#39;</span><span class="p">)</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;tag&#39;</span><span class="p">)</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.class&#39;</span><span class="p">)</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;tag[attribute=value]&#39;</span><span class="p">)</span>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="element-properties-and-methods">Element Properties and Methods</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="properties">Properties</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1">// content</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nx">element</span><span class="p">.</span><span class="nx">innerText</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="nx">element</span><span class="p">.</span><span class="nx">textContent</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="nx">element</span><span class="p">.</span><span class="nx">innerHTML</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="c1">// attributes</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="nx">element</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;attribute&#39;</span><span class="p">)</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="nx">element</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;attribute&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="c1">// styles</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="nx">element</span><span class="p">.</span><span class="nx">style</span>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;value&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// avoid because inline; use css class methods instead</span>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="c1">// css classes</span>
+</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="kd">class</span><span class="p">)</span>
+</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="kd">class</span><span class="p">)</span>
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a><span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="kd">class</span><span class="p">)</span>
+</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>
+</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a><span class="c1">// get all effective css classes</span>
+</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span>
+</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>
+</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a><span class="c1">// selecting a relative element</span>
+</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a><span class="nx">element</span><span class="p">.</span><span class="nx">parentElement</span>
+</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a><span class="nx">element</span><span class="p">.</span><span class="nx">children</span>
+</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a><span class="nx">element</span><span class="p">.</span><span class="nx">nextElementSibling</span>
+</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a><span class="nx">element</span><span class="p">.</span><span class="nx">previousElementSibling</span>
+</span></code></pre></div>
+<h4 id="create-and-remove-elements">Create and remove elements</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1">// create a new element</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">tag</span><span class="p">)</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="c1">// add as child</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="nx">element</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">elem</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="c1">// newer; append text easily; append multiple elements</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="nx">element</span><span class="p">.</span><span class="nx">prepend</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="c1">// add as sibling</span>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="nx">element</span><span class="p">.</span><span class="nx">insertAdjacentElement</span><span class="p">(</span><span class="nx">position</span><span class="p">,</span><span class="w"> </span><span class="nx">elem</span><span class="p">)</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="nx">element</span><span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="nx">elem</span><span class="p">)</span>
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="nx">element</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="nx">elem</span><span class="p">)</span>
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>
+</span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="c1">// remove element</span>
+</span><span id="__span-33-15"><a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a><span class="kd">const</span><span class="w"> </span><span class="nx">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span>
+</span><span id="__span-33-16"><a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">elem</span><span class="p">)</span><span class="w"> </span><span class="c1">// older</span>
+</span><span id="__span-33-17"><a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">remove</span><span class="p">()</span><span class="w"> </span><span class="c1">// newer</span>
+</span></code></pre></div>
+<h3 id="event-handler">Event Handler</h3>
+<h4 id="inline-avoid">Inline (avoid)</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onclick</span><span class="o">=</span><span class="s2">&quot;alert(&#39;hi&#39;)&quot;</span><span class="o">&gt;</span><span class="nx">Click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span></code></pre></div>
+<h4 id="property">Property</h4>
+<p>Only supports one callback for each property.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nx">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="event-listener">Event Listener</h4>
+<p>Supports multiple callbacks<br />
+More arguments/options</p>
+<p><code>this</code> inside the callback refers to the element.<br />
+Use <code>this</code> when defining a separate callback function.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nx">elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="c1">// e callback argument</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="w">    </span><span class="c1">// e will contain an event object with details about the event</span>
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="w">    </span><span class="c1">// e.g. coordinates, keys</span>
+</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-36-9"><a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="p">})</span>
+</span></code></pre></div>
+<p><strong>Prevent Default</strong><br />
+Prevents default behavior of the element (e.g. stop redirection upon submitting forms)
+<div class="language-js highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="p">})</span>
+</span></code></pre></div></p>
+<p><strong>Event Bubbling</strong><br />
+When nested event handlers bubble up executing each in order
+<div class="language-js highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nx">elem</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">    </span><span class="c1">// stops event bubbling</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">()</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="p">})</span>
+</span></code></pre></div></p>
+<p><strong>Event Delegation</strong><br />
+Strategically applying event handlers so they work correctly.</p>
+<p>Example:</p>
+<ul>
+<li>handler that removes an element also removes the handler itself</li>
+<li>when new elements are created, they won't have the same handler</li>
+</ul>
+<p>Solution: apply event handler on the parent that will persist</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nx">parentElem</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">nodeName</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;LI&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">remove</span><span class="p">()</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="p">})</span>
+</span></code></pre></div>
+<h2 id="promise">Promise</h2>
+<p>Object representation of the eventual completion or failure of an asynchronous operation.<br />
+Solves callback hell by chaining promises</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nx">promise1</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">promise2</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">promise3</span>
+</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a><span class="w">    </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a><span class="w">    </span><span class="p">})</span>
+</span></code></pre></div>
+<h3 id="create-a-promise">Create a promise</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">url</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">success</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">            </span><span class="p">...</span>
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w">            </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="w">            </span><span class="p">...</span>
+</span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="w">            </span><span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-41-11"><a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-41-12"><a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="async-functions">Async Functions</h3>
+<p>Syntactic sugar for promises<br />
+Use async and await to bundle promises instead of chaining them</p>
+<p><code>async</code> - creates an async function<br />
+<code>await</code> - pauses execution until a promise is resolved or rejected</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">url</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`error: </span><span class="si">${</span><span class="nx">e</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span><span class="w"> </span><span class="c1">// or throw `error: ${e}`</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="http">HTTP</h2>
+<h3 id="ajax">AJAX</h3>
+<p>Asynchronous Javascript and XML (JSON)<br />
+Making requests behind the scenes without going to a new webpage (e.g. infinite scrolling, live search)</p>
+<h3 id="json">JSON</h3>
+<p>JavaScript Object Notation
+<div class="language-js highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="c1">// from json string to object</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="c1">// from json object to string</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">object</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h3 id="response">Response</h3>
+<ul>
+<li>content</li>
+<li>status code</li>
+<li>headers (metadata)</li>
+</ul>
+<h3 id="query-string">Query String</h3>
+<p>Additional info for the request</p>
+<h3 id="requests">Requests</h3>
+<h4 id="xhr-old">XHR (old)</h4>
+<p>XML Http Request<br />
+Old way of making requests<br />
+Does not support promises
+<div class="language-js highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="nx">req</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="p">}</span>
+</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>
+</span><span id="__span-44-9"><a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a><span class="nx">req</span><span class="p">.</span><span class="nx">onerror</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-44-10"><a id="__codelineno-44-10" name="__codelineno-44-10" href="#__codelineno-44-10"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-44-11"><a id="__codelineno-44-11" name="__codelineno-44-11" href="#__codelineno-44-11"></a><span class="p">}</span>
+</span><span id="__span-44-12"><a id="__codelineno-44-12" name="__codelineno-44-12" href="#__codelineno-44-12"></a>
+</span><span id="__span-44-13"><a id="__codelineno-44-13" name="__codelineno-44-13" href="#__codelineno-44-13"></a><span class="nx">req</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">);</span>
+</span><span id="__span-44-14"><a id="__codelineno-44-14" name="__codelineno-44-14" href="#__codelineno-44-14"></a><span class="nx">req</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</span></code></pre></div></p>
+<h4 id="fetch-api-built-in">Fetch API (built-in)</h4>
+<p>Better way of making requests than XHR<br />
+Support promises</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="w">        </span><span class="c1">// parse the JSON string</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="w">        </span><span class="c1">// here data has been parsed to JSON</span>
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="w">    </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>
+</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a><span class="c1">// using async</span>
+</span><span id="__span-45-16"><a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">fetchAsync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-45-17"><a id="__codelineno-45-17" name="__codelineno-45-17" href="#__codelineno-45-17"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-45-18"><a id="__codelineno-45-18" name="__codelineno-45-18" href="#__codelineno-45-18"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</span><span id="__span-45-19"><a id="__codelineno-45-19" name="__codelineno-45-19" href="#__codelineno-45-19"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span><span id="__span-45-20"><a id="__codelineno-45-20" name="__codelineno-45-20" href="#__codelineno-45-20"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-45-21"><a id="__codelineno-45-21" name="__codelineno-45-21" href="#__codelineno-45-21"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-45-22"><a id="__codelineno-45-22" name="__codelineno-45-22" href="#__codelineno-45-22"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-45-23"><a id="__codelineno-45-23" name="__codelineno-45-23" href="#__codelineno-45-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-45-24"><a id="__codelineno-45-24" name="__codelineno-45-24" href="#__codelineno-45-24"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="axios">Axios</h4>
+<p>Library for making HTTP requests<br />
+Better than fetch<br />
+Data is already parsed</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="w">        </span><span class="c1">// already parsed</span>
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="w">    </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-46-7"><a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-46-8"><a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-46-9"><a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a>
+</span><span id="__span-46-10"><a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a><span class="c1">// using async</span>
+</span><span id="__span-46-11"><a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">axiosAsnyc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-46-12"><a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-46-13"><a id="__codelineno-46-13" name="__codelineno-46-13" href="#__codelineno-46-13"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-46-14"><a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a><span class="w">            </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-46-15"><a id="__codelineno-46-15" name="__codelineno-46-15" href="#__codelineno-46-15"></a><span class="w">            </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-46-16"><a id="__codelineno-46-16" name="__codelineno-46-16" href="#__codelineno-46-16"></a><span class="w">        </span><span class="p">};</span>
+</span><span id="__span-46-17"><a id="__codelineno-46-17" name="__codelineno-46-17" href="#__codelineno-46-17"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">);</span>
+</span><span id="__span-46-18"><a id="__codelineno-46-18" name="__codelineno-46-18" href="#__codelineno-46-18"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+</span><span id="__span-46-19"><a id="__codelineno-46-19" name="__codelineno-46-19" href="#__codelineno-46-19"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-46-20"><a id="__codelineno-46-20" name="__codelineno-46-20" href="#__codelineno-46-20"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-46-21"><a id="__codelineno-46-21" name="__codelineno-46-21" href="#__codelineno-46-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-46-22"><a id="__codelineno-46-22" name="__codelineno-46-22" href="#__codelineno-46-22"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="class">Class</h2>
+<h3 id="factory-function-old">Factory Function (old)</h3>
+<p>A function that returns an object attached with its properties and methods.<br />
+Each method is defined in each returned object unlike with prototypes (bad practice).</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">func</span><span class="p">(</span><span class="nx">args</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="w">    </span><span class="nx">obj</span><span class="p">.</span><span class="nx">arg1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arg1</span><span class="p">;</span>
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>
+</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="w">    </span><span class="nx">obj</span><span class="p">.</span><span class="nx">method1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">properties</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+</span><span id="__span-47-8"><a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-47-9"><a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-47-10"><a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-47-11"><a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a>
+</span><span id="__span-47-12"><a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">obj</span><span class="p">;</span>
+</span><span id="__span-47-13"><a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a><span class="p">}</span>
+</span><span id="__span-47-14"><a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a>
+</span><span id="__span-47-15"><a id="__codelineno-47-15" name="__codelineno-47-15" href="#__codelineno-47-15"></a><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="constructor-function-old">Constructor Function (old)</h3>
+<p>A function that creates a new object with properties and methods using prototypes.<br />
+Uses <code>new</code> keyword.<br />
+Methods are attached by using prototypes.
+<div class="language-js highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">Func</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">arg1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arg1</span><span class="p">;</span>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="p">}</span>
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>
+</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a><span class="nx">Func</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">method1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">prop1</span><span class="p">,</span><span class="w"> </span><span class="nx">prop2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+</span><span id="__span-49-8"><a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-49-9"><a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a><span class="p">}</span>
+</span><span id="__span-49-10"><a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a>
+</span><span id="__span-49-11"><a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Func</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="classes-classes">Classes {#classes}</h3>
+<p>Syntactic sugar for constructor functions</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">Class</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">arg1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arg1</span><span class="p">;</span>
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>
+</span><span id="__span-50-7"><a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a><span class="w">    </span><span class="nx">method1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-50-8"><a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">properties</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+</span><span id="__span-50-9"><a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-50-10"><a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-50-11"><a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a><span class="p">}</span>
+</span><span id="__span-50-12"><a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a>
+</span><span id="__span-50-13"><a id="__codelineno-50-13" name="__codelineno-50-13" href="#__codelineno-50-13"></a><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Class</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+</span><span id="__span-50-14"><a id="__codelineno-50-14" name="__codelineno-50-14" href="#__codelineno-50-14"></a>
+</span><span id="__span-50-15"><a id="__codelineno-50-15" name="__codelineno-50-15" href="#__codelineno-50-15"></a><span class="c1">// inheritance</span>
+</span><span id="__span-50-16"><a id="__codelineno-50-16" name="__codelineno-50-16" href="#__codelineno-50-16"></a><span class="kd">class</span><span class="w"> </span><span class="nx">SubClass</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Class</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-50-17"><a id="__codelineno-50-17" name="__codelineno-50-17" href="#__codelineno-50-17"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-50-18"><a id="__codelineno-50-18" name="__codelineno-50-18" href="#__codelineno-50-18"></a><span class="w">        </span><span class="k">super</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+</span><span id="__span-50-19"><a id="__codelineno-50-19" name="__codelineno-50-19" href="#__codelineno-50-19"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">arg1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arg1</span><span class="p">;</span>
+</span><span id="__span-50-20"><a id="__codelineno-50-20" name="__codelineno-50-20" href="#__codelineno-50-20"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-50-21"><a id="__codelineno-50-21" name="__codelineno-50-21" href="#__codelineno-50-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-50-22"><a id="__codelineno-50-22" name="__codelineno-50-22" href="#__codelineno-50-22"></a>
+</span><span id="__span-50-23"><a id="__codelineno-50-23" name="__codelineno-50-23" href="#__codelineno-50-23"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-50-24"><a id="__codelineno-50-24" name="__codelineno-50-24" href="#__codelineno-50-24"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="notes">Notes</h2>
+<h3 id="camelcase-naming-convention">CamelCase Naming Convention</h3>
+<h3 id="window-is-the-top-level-or-global-object"><code>window</code> is the top level or global object</h3>
+<h3 id="call-stack">Call Stack</h3>
+<p>How code is tracked and executed<br />
+LIFO - recent function put into the call stack is executed and removed from the stack<br />
+<a href="http://latentflip.com/loupe">Loupe</a> - visualize call stack</p>
+<h3 id="js-is-single-threaded">JS is single-threaded</h3>
+<p>At any given point in time, the thread is running at most a single line of JS code.<br />
+Browsers help JS to work around single threadedness via <em>web apis</em>. It will remind JS to run a callback function at a certain point of time.</p>
+<h3 id="callback-hell">Callback Hell</h3>
+<p>Multiple nested callbacks<br />
+When a callback depends on a callback which depends on a callback, and so on.</p>
+<h3 id="js-is-a-prototype-based-language">JS is a prototype-based language</h3>
+<p>Objects and data structures are created from prototypes/blueprints sharing properties and methods.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="c1">// type.prototype.property/method</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">length</span>
+</span></code></pre></div>
+<h3 id="this-context"><code>this</code> Context</h3>
+<h4 id="global-context">Global Context</h4>
+<p>Refers to the global object whether in strict mode or not.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="k">this</span><span class="p">.</span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MDN&quot;</span><span class="p">;</span>
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;MDN&quot;</span>
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="c1">// &quot;MDN&quot;</span>
+</span></code></pre></div>
+<h4 id="function-context">Function Context</h4>
+<p>When not in strict mode, it will default to the global object.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">f1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="p">}</span>
+</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>
+</span><span id="__span-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a><span class="c1">// in a browser</span>
+</span><span id="__span-53-6"><a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a><span class="nx">f1</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nb">window</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a><span class="c1">// in Node</span>
+</span><span id="__span-53-8"><a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a><span class="nx">f1</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nb">globalThis</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div>
+<p>In strict mode, it's <code>undefined</code>.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">f2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="w">    </span><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="p">}</span>
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>
+</span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a><span class="nx">f2</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div>
+<p>This can be overriden by <code>call</code> or <code>apply</code> methods.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="c1">// an object can be passed as the first argument to call or apply and this will be bound to it.</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Custom&#39;</span><span class="p">};</span>
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Global&#39;</span><span class="p">;</span>
+</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a><span class="kd">function</span><span class="w"> </span><span class="nx">whatsThis</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a><span class="w">    </span><span class="c1">// The value of this is dependent on how the function is called</span>
+</span><span id="__span-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span>
+</span><span id="__span-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a><span class="p">}</span>
+</span><span id="__span-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>
+</span><span id="__span-55-10"><a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a><span class="nx">whatsThis</span><span class="p">();</span><span class="w">          </span><span class="c1">// &#39;Global&#39; as `this` in the function isn&#39;t set, so it defaults to the global/window object</span>
+</span><span id="__span-55-11"><a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a><span class="nx">whatsThis</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;Custom&#39; as `this` in the function is set to obj</span>
+</span><span id="__span-55-12"><a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a><span class="nx">whatsThis</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span><span class="w"> </span><span class="c1">// &#39;Custom&#39; as `this` in the function is set to obj</span>
+</span></code></pre></div>
+<h4 id="class-context">Class Context</h4>
+<p>Similar to function except for few caveats.<br />
+Within a class constructor, <code>this</code> is a regular object that can be accessed by the class methods. </p>
+<p>To retain the reference to the instance, it may be necessary to use <code>bind</code>.
+<div class="language-js highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">Car</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a><span class="w">    </span><span class="c1">// Bind sayBye but not sayHi to show the difference</span>
+</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">sayBye</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">sayBye</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span><span id="__span-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-56-6"><a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a><span class="w">  </span><span class="nx">sayHi</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-56-7"><a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello from </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-56-8"><a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-56-9"><a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a><span class="w">  </span><span class="nx">sayBye</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-56-10"><a id="__codelineno-56-10" name="__codelineno-56-10" href="#__codelineno-56-10"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Bye from </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-56-11"><a id="__codelineno-56-11" name="__codelineno-56-11" href="#__codelineno-56-11"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-56-12"><a id="__codelineno-56-12" name="__codelineno-56-12" href="#__codelineno-56-12"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">name</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-56-13"><a id="__codelineno-56-13" name="__codelineno-56-13" href="#__codelineno-56-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;Ferrari&#39;</span><span class="p">;</span>
+</span><span id="__span-56-14"><a id="__codelineno-56-14" name="__codelineno-56-14" href="#__codelineno-56-14"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-56-15"><a id="__codelineno-56-15" name="__codelineno-56-15" href="#__codelineno-56-15"></a><span class="p">}</span>
+</span><span id="__span-56-16"><a id="__codelineno-56-16" name="__codelineno-56-16" href="#__codelineno-56-16"></a>
+</span><span id="__span-56-17"><a id="__codelineno-56-17" name="__codelineno-56-17" href="#__codelineno-56-17"></a><span class="kd">class</span><span class="w"> </span><span class="nx">Bird</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Car</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-56-18"><a id="__codelineno-56-18" name="__codelineno-56-18" href="#__codelineno-56-18"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">name</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-56-19"><a id="__codelineno-56-19" name="__codelineno-56-19" href="#__codelineno-56-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;Tweety&#39;</span><span class="p">;</span>
+</span><span id="__span-56-20"><a id="__codelineno-56-20" name="__codelineno-56-20" href="#__codelineno-56-20"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-56-21"><a id="__codelineno-56-21" name="__codelineno-56-21" href="#__codelineno-56-21"></a><span class="p">}</span>
+</span><span id="__span-56-22"><a id="__codelineno-56-22" name="__codelineno-56-22" href="#__codelineno-56-22"></a>
+</span><span id="__span-56-23"><a id="__codelineno-56-23" name="__codelineno-56-23" href="#__codelineno-56-23"></a><span class="kd">const</span><span class="w"> </span><span class="nx">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Car</span><span class="p">();</span>
+</span><span id="__span-56-24"><a id="__codelineno-56-24" name="__codelineno-56-24" href="#__codelineno-56-24"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bird</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Bird</span><span class="p">();</span>
+</span><span id="__span-56-25"><a id="__codelineno-56-25" name="__codelineno-56-25" href="#__codelineno-56-25"></a>
+</span><span id="__span-56-26"><a id="__codelineno-56-26" name="__codelineno-56-26" href="#__codelineno-56-26"></a><span class="c1">// The value of &#39;this&#39; in methods depends on their caller</span>
+</span><span id="__span-56-27"><a id="__codelineno-56-27" name="__codelineno-56-27" href="#__codelineno-56-27"></a><span class="nx">car</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hello from Ferrari</span>
+</span><span id="__span-56-28"><a id="__codelineno-56-28" name="__codelineno-56-28" href="#__codelineno-56-28"></a>
+</span><span id="__span-56-29"><a id="__codelineno-56-29" name="__codelineno-56-29" href="#__codelineno-56-29"></a><span class="nx">bird</span><span class="p">.</span><span class="nx">sayHi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">car</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">;</span>
+</span><span id="__span-56-30"><a id="__codelineno-56-30" name="__codelineno-56-30" href="#__codelineno-56-30"></a><span class="nx">bird</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">();</span><span class="w"> </span><span class="c1">// Hello from Tweety</span>
+</span><span id="__span-56-31"><a id="__codelineno-56-31" name="__codelineno-56-31" href="#__codelineno-56-31"></a>
+</span><span id="__span-56-32"><a id="__codelineno-56-32" name="__codelineno-56-32" href="#__codelineno-56-32"></a><span class="c1">// For bound methods, &#39;this&#39; doesn&#39;t depend on the caller</span>
+</span><span id="__span-56-33"><a id="__codelineno-56-33" name="__codelineno-56-33" href="#__codelineno-56-33"></a><span class="nx">bird</span><span class="p">.</span><span class="nx">sayBye</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">car</span><span class="p">.</span><span class="nx">sayBye</span><span class="p">;</span>
+</span><span id="__span-56-34"><a id="__codelineno-56-34" name="__codelineno-56-34" href="#__codelineno-56-34"></a><span class="nx">bird</span><span class="p">.</span><span class="nx">sayBye</span><span class="p">();</span><span class="w">  </span><span class="c1">// Bye from Ferrari</span>
+</span></code></pre></div></p>
+<h4 id="arrow-functions">Arrow Functions</h4>
+<p><code>this</code> retains the value of the enclosing lexical context's <code>this</code> - where it was created.<br />
+This is useful when retaining the reference to the object where it was created, instead of an instance where it was called.<br />
+In global code, it will be set to the global object.</p>
+<h4 id="as-an-object-method">As an object method</h4>
+<p>When a function is called as a method of an object, its <code>this</code> is set to the object the method is called on.</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="c1">// calling the method directly from the object</span>
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="w">    </span><span class="nx">prop</span><span class="o">:</span><span class="w"> </span><span class="mf">37</span><span class="p">,</span>
+</span><span id="__span-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="w">    </span><span class="nx">f</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">prop</span><span class="p">;</span>
+</span><span id="__span-57-6"><a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-57-7"><a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a><span class="p">};</span>
+</span><span id="__span-57-8"><a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a>
+</span><span id="__span-57-9"><a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">f</span><span class="p">());</span><span class="w"> </span><span class="c1">// 37</span>
+</span><span id="__span-57-10"><a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a>
+</span><span id="__span-57-11"><a id="__codelineno-57-11" name="__codelineno-57-11" href="#__codelineno-57-11"></a><span class="c1">// referencing `this` from the object the method was called on</span>
+</span><span id="__span-57-12"><a id="__codelineno-57-12" name="__codelineno-57-12" href="#__codelineno-57-12"></a><span class="kd">var</span><span class="w"> </span><span class="nx">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">prop</span><span class="o">:</span><span class="w"> </span><span class="mf">37</span><span class="p">};</span>
+</span><span id="__span-57-13"><a id="__codelineno-57-13" name="__codelineno-57-13" href="#__codelineno-57-13"></a><span class="kd">function</span><span class="w"> </span><span class="nx">independent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-57-14"><a id="__codelineno-57-14" name="__codelineno-57-14" href="#__codelineno-57-14"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">prop</span><span class="p">;</span>
+</span><span id="__span-57-15"><a id="__codelineno-57-15" name="__codelineno-57-15" href="#__codelineno-57-15"></a><span class="p">}</span>
+</span><span id="__span-57-16"><a id="__codelineno-57-16" name="__codelineno-57-16" href="#__codelineno-57-16"></a>
+</span><span id="__span-57-17"><a id="__codelineno-57-17" name="__codelineno-57-17" href="#__codelineno-57-17"></a><span class="nx">o</span><span class="p">.</span><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">independent</span><span class="p">;</span>
+</span><span id="__span-57-18"><a id="__codelineno-57-18" name="__codelineno-57-18" href="#__codelineno-57-18"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">f</span><span class="p">());</span><span class="w"> </span><span class="c1">// 37</span>
+</span></code></pre></div>
+<h4 id="as-a-dom-event-handler">As a DOM event handler</h4>
+<p><code>this</code> is set to the element on which the listener is placed.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>
