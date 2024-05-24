@@ -26,7 +26,14 @@ nav:
     - notes/python.md
     - notes/sql.md
     - notes/java.md
+    - notes/html.md
+    - notes/css.md
+    - notes/javascript.md
+    - notes/nodejs.md
     - notes/tools.md
+    - notes/programming.md
+    - notes/web-development.md
+    - notes/code-problems.md
   - Blog:
     - blog/index.md
 plugins:
