@@ -2,41 +2,95 @@
 
 ## Git
 
-### Rename local branch
-```bash
+### Config
+```sh
+# set identity
+git config -global user.name "Your Name"
+git config -global user.email "youremail@domain.com"
+```
+
+### Initialize
+```sh
+# initialize directory as git project
+git init
+
+# repository is aliased by origin
+git clone <repository> <local-directory>
+```
+
+
+### Update
+```sh
+# downloads commits, files, refs from remote to local
+# safer update, fetched content has to be explicitly checked out
+git fetch
+
+# fetch and update local content
+git pull <repository> <branch>
+
+# merge giver to receiver, must be at receiver branch
+git merge <giver-branch>
+```
+
+### Workflow
+```sh
+# show status
+git status
+git diff <. | file>
+
+# add files to staging
+git add <. | files>
+
+# commit staged files
+# must be in quotation marks
+# written in present tense
+# should be brief, 50 characters or fewer
+git commit -m <comment>
+
+# push committed files
+git push origin <branch>
+```
+
+### Show
+```sh
+# show commits
+git log
+
+# HEAD commit contains the latest commits
+git show HEAD
+
+# show repositories
+git remote -v
+```
+
+### Branch
+```sh
+# show current branch
+git branch
+
+# switch branch
+git checkout <branch>
+
+# delete branch
+git branch -d <branch>
+
+# rename local branch
 git branch -m new-branch-name
 ```
 
-## Kubectl
+### Reset
+```sh
+# revert file in working directory to its latest commit
+git checkout <commit> <file>
 
-### Logs
-```bash
-k logs -f deploy/<deploy>
-k logs -fl app=<label>
+# unstage a file
+git reset <commit> <file>
+
+# undo to the commit identified by sha
+git reset <sha>
 ```
 
-### Logs of previous deploy
-```bash
-kubectl logs podname -c containername --previous
 
-k logs deploy/<deploy> --previous
-```
-
-### Execute into a pod
-```bash
-k get pods
-k exec -ti <pod> -- sh
-```
-
-### Run cronjob as job
-```bash
-k create job --from=cj/<cronjob> <name>
-```
-
-### Get pods and sort by memory
-```bash
-k top pod --sort-by=memory
-```
 
 ## Kafka
 
@@ -52,12 +106,16 @@ kafka-consumer-groups --bootstrap-server localhost:9092 --group payment_update_g
 kafka-console-producer --topic payment_update --bootstrap-server localhost:9092
 ```
 
+
+
 ## Python
 
 ### Run Uvicorn
 ```bash
 poetry run uvicorn main:app --reload --port 5001
 ```
+
+
 
 ## Shell
 
@@ -81,6 +139,8 @@ ssh -NL 4000:localhost:4000 -NL 4001:localhost:4001 -NL 4002:localhost:4002 uat@
 # tunnel an external resource from a server
 ssh -NL 5433:x.rds.amazonaws.com:5432 uat@server
 ```
+
+
 
 ## Slack
 

@@ -1,5 +1,46 @@
 # MongoDB
 
+## Commands
+MongoDB Shell  
+Also a JS shell - can execute JS code
+
+```js
+help
+
+db
+show dbs
+show collections
+
+// create/switch to specified db
+use [db]
+
+// insert many documents
+db.[collection].insert([{ ... }]) // array of js objects
+
+// returns all documents; returns a cursor
+db.[collection].find()
+// specific query; returns a cursor
+db.[collection].find({ ... })
+// specific query; returns 0 or 1 document
+db.[collection].findOne({ ... })
+
+// updates 0 or 1 document
+db.[collection].updateOne({ <query> }, { <operator> : { <updates> } })
+// updates many documents
+db.[collection].updateMany({ <query> }, { <operator> : { <updates> } })
+// completely replace a document except the id
+db.[collection].replaceOne({ <query> }, { <operator> : { <updates> } })
+
+// deletes 0 or 1 document
+db.[collection].deleteOne({ <query> })
+// deletes many documents
+db.[collection].deleteMany({ <query> })
+
+// sample query operators
+{'nested.properties': value}
+{age: {$gt: 7}}
+```
+
 ## Query
 
 ### Array size
@@ -200,4 +241,6 @@ MONGODB_URL=mongodb://localhost:27017/deductions_uat?replicaSet=rs0
 
 ## References
 
-[Install multiple MongoDB instances](https://www.codexpedia.com/devops/installing-multiple-instances-of-mongodb/)
+[Setup](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-mongodb)  
+[Compass](https://www.mongodb.com/try/download/compass)  
+[Install multiple MongoDB instances](https://www.codexpedia.com/devops/installing-multiple-instances-of-mongodb/)  
