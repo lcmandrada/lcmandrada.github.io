@@ -1,1 +1,0 @@
-# lcmandrada.github.io
